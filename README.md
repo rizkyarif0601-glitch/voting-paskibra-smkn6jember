@@ -1,58 +1,114 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🗳️ E-Voting Paskibra SMKN 6 Jember
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="public/images/logo-paskibra.png" alt="Logo Paskibra SMKN 6 Jember" width="120" style="border-radius: 50%;">
 </p>
 
-## About Laravel
+<p align="center">
+  <b>Sistem Pemilihan Ketua Umum Paskibra Berbasis Web</b><br>
+  Aman, Transparan, Cepat, dan Akurat dengan Sistem Token Sekali Pakai & Real-Time Quick Count.
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+  <img src="https://img.shields.io/badge/PHP-8.3%2B-777BB4?style=flat-square&logo=php&logoColor=white" alt="PHP Version">
+  <img src="https://img.shields.io/badge/Laravel-11%2F12-FF2D20?style=flat-square&logo=laravel&logoColor=white" alt="Laravel Framework">
+  <img src="https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=flat-square&logo=bootstrap&logoColor=white" alt="Bootstrap 5">
+  <img src="https://img.shields.io/badge/Chart.js-4.x-FF6384?style=flat-square&logo=chartdotjs&logoColor=white" alt="Chart.js">
+  <img src="https://img.shields.io/badge/Security-One--Time%20Token-28a745?style=flat-square" alt="Token Security">
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 📌 Tentang Proyek
 
-## Learning Laravel
+**E-Voting Paskibra SMKN 6 Jember** adalah aplikasi web pemilihan umum mandiri yang dirancang khusus untuk memfasilitasi proses pergantian kepengurusan Paskibra di SMK Negeri 6 Jember. 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Aplikasi ini menggantikan metode pemilihan konvensional berbasis kertas dengan sistem digital yang:
+* **Mencegah Golput & Manipulasi Suara** melalui sistem tiket/token unik.
+* **Mempercepat Perhitungan Suara** secara otomatis tanpa risiko kesalahan hitung manual.
+* **Meningkatkan Partisipasi Pemilih** dengan antarmuka modern yang nyaman diakses melalui smartphone maupun laptop di bilik suara.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## ✨ Fitur Utama
 
-## Agentic Development
+### 1. 🔑 Sistem Token Sekali Pakai (*Anti-Double Voting*)
+* Setiap pemilih mendapatkan 1 token acak unik (misal: 6 karakter).
+* Token otomatis hangus seketika setelah pemilih menekan tombol konfirmasi pilihan.
+* Token tidak dapat dipakai ulang untuk mencegah manipulasi suara.
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### 2. 🗳️ Bilik Suara Interaktif (*Digital Ballot*)
+* Tampilan kartu paslon yang elegan dengan nomor urut, foto kandidat, serta modal visi dan misi detail.
+* Konfirmasi pilihan sebelum suara sah dimasukkan ke dalam kotak suara digital (*ballot box*).
+
+### 3. 📊 Quick Count & Grafik Real-Time
+* Layar pantau (*live monitor*) interaktif dengan visualisasi persentase dan jumlah suara menggunakan **Chart.js**.
+* Menampilkan jumlah pemilih yang telah menggunakan hak suara vs jumlah token yang belum terpakai.
+* Desain elegan bernuansa *dark mode* premium, sangat cocok ditampilkan pada layar proyektor aula saat penghitungan suara terbuka.
+
+### 4. 🖨️ Manajemen & Cetak Token Siap Potong
+* Fitur generate token otomatis dalam jumlah banyak (*bulk generate*).
+* Halaman cetak token pemilih dengan layout grid rapi dan garis potong putus-putus (*cut marks*), siap langsung dicetak pada kertas A4 dan dibagikan ke siswa/anggota.
+
+### 5. 🛡️ Keamanan & Integritas Data
+* Proteksi sesi pemilih (*middleware guard*).
+* Autentikasi administrator dengan enkripsi password standar industri (*Bcrypt*).
+* Menggunakan transaksi database (*database transaction*) saat voting untuk menjamin integritas data bila terjadi gangguan jaringan.
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+* **Backend Framework**: [Laravel](https://laravel.com/) (PHP 8.3+)
+* **Database**: MySQL / SQLite Support
+* **Frontend**: Blade Templating, Vanilla CSS Custom Design
+* **UI Components**: [Bootstrap 5](https://getbootstrap.com/), Bootstrap Icons
+* **Data Visualization**: [Chart.js](https://www.chartjs.org/)
+* **Typography**: Outfit & Plus Jakarta Sans (*offline local fonts*)
+
+---
+
+## 🚀 Panduan Menjalankan Secara Lokal
+
+Jika ingin menguji coba atau menjalankan proyek ini di komputer lokal:
+
+### 1. Prasyarat
+* PHP >= 8.2 (disarankan PHP 8.3+)
+* Composer
+* MySQL atau SQLite
+
+### 2. Langkah Instalasi
 
 ```bash
-composer require laravel/boost --dev
+# 1. Clone repository ini
+git clone https://github.com/rizkyarif0601-glitch/voting-paskibra-smkn6jember.git
 
-php artisan boost:install
+# 2. Masuk ke folder proyek
+cd voting-paskibra-smkn6jember
+
+# 3. Install dependency PHP
+composer install
+
+# 4. Salin file environment
+cp .env.example .env
+
+# 5. Generate Application Key
+php artisan key:generate
+
+# 6. Konfigurasi Database di file .env, lalu jalankan migrasi & data awal
+php artisan migrate --seed
+
+# 7. Jalankan server lokal
+php artisan serve
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Aplikasi dapat langsung diakses melalui browser di:  
+👉 **`http://localhost:8000`**
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 👥 Pengembang & Hak Cipta
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* **Aplikasi**: E-Voting Paskibra SMKN 6 Jember
+* **Institusi**: SMK Negeri 6 Jember
+* **Lisensi**: [MIT License](LICENSE)
